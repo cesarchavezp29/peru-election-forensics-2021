@@ -580,10 +580,7 @@ cb.set_label("Castillo share of valid votes", fontsize=9)
 cb.set_ticks([0, 0.25, 0.50, 0.75, 1.0])
 cb.set_ticklabels(["0%\n(Fujimori)", "25%", "50%\n(Tie)", "75%", "100%\n(Castillo)"])
 cb.ax.tick_params(labelsize=8)
-ax.set_title("Fig. 1 — Castillo Vote Share by Province\n"
-             "Peru Presidential Runoff, June 2021\n"
-             f"(Sample: CONTABILIZADA + COMPUTADA RESUELTA, n={len(df):,} mesas)",
-             fontsize=10, fontweight="bold", pad=8)
+# title removed — caption in LaTeX
 ax.annotate(f"Department boundaries in black. Gray = unmatched ({gdf_p['share_c'].isna().sum()} provs).",
             xy=(0.01,0.01), xycoords="axes fraction", fontsize=7, color="#555", va="bottom")
 save_fig(fig, "fig1_map_castillo")
@@ -624,8 +621,10 @@ def klimek_panel_v2(ax_main, ax_top, ax_right, share_col, candidate_name):
     ax_main.yaxis.set_major_formatter(mtick.PercentFormatter(1.0))
     ax_main.set_xlabel("Turnout (votes cast / registered voters)", fontsize=9)
     ax_main.set_ylabel(f"{candidate_name} share of valid votes", fontsize=9)
-    ax_main.set_title(candidate_name, fontsize=10, fontweight="bold")
-    ax_main.legend(fontsize=8, markerscale=2, loc="upper left", framealpha=0.8)
+    # panel title removed — caption in LaTeX
+    ax_main.legend(fontsize=8, markerscale=2,
+                   loc="upper center", bbox_to_anchor=(0.5, -0.12),
+                   ncol=2, framealpha=0.9)
 
     # Marginals
     all_sub = pd.concat([sub_unc, sub_con])
@@ -637,10 +636,7 @@ def klimek_panel_v2(ax_main, ax_top, ax_right, share_col, candidate_name):
     ax_right.set_ylim(0.0, 1.0); ax_right.set_axis_off()
 
 fig2 = plt.figure(figsize=(14, 6.5))
-fig2.suptitle("Fig. 2 — Klimek Fingerprint Plots\n"
-              "Orange = COMPUTADA RESUELTA (contested), Gray = CONTABILIZADA (uncontested)\n"
-              "Peru Presidential Runoff 2021",
-              fontsize=10, fontweight="bold", y=1.02)
+# suptitle removed — caption in LaTeX
 gs2 = GridSpec(2, 4, width_ratios=[4,0.65,4,0.65], height_ratios=[0.65,4],
                hspace=0.05, wspace=0.05, left=0.07, right=0.97, top=0.92, bottom=0.10)
 axm_c = fig2.add_subplot(gs2[1,0]); axt_c = fig2.add_subplot(gs2[0,0], sharex=axm_c)
@@ -671,7 +667,10 @@ def ld_panel(ax, series, label, color):
     ax.set_ylim(0, 16)
     ax.set_xlabel("Last digit", fontsize=8)
     ax.set_ylabel("Share (%)", fontsize=8)
-    ax.set_title(label, fontsize=9, fontweight="bold")
+    # panel title removed — caption in LaTeX
+    ax.text(0.02, 0.98, label.replace("\n", " | "), transform=ax.transAxes,
+            ha="left", va="top", fontsize=7.5, color="#333",
+            bbox=dict(boxstyle="round,pad=0.2", fc="white", ec="none", alpha=0.7))
     ax.yaxis.set_major_formatter(mtick.FormatStrFormatter("%.0f%%"))
     ax.grid(axis="y", alpha=0.3, zorder=0)
     verdict = "Uniform" if p_val > 0.05 else "REJECT uniform"
@@ -680,10 +679,7 @@ def ld_panel(ax, series, label, color):
             bbox=dict(boxstyle="round,pad=0.3", fc="white", ec="#ccc", alpha=0.9))
 
 fig3, axes3 = plt.subplots(2, 2, figsize=(12, 8), sharey=True)
-fig3.suptitle("Fig. 3 — Last-Digit Test: Contested vs Uncontested Mesas\n"
-              "Uniform distribution expected (10% per digit) if no manipulation\n"
-              "Gray bars = digits 0 and 5 (heaping targets)",
-              fontsize=10, fontweight="bold")
+# suptitle removed — caption in LaTeX
 ld_panel(axes3[0,0], unc["CASTILLO"], "Castillo — Uncontested\n(CONTABILIZADA)", "#c0392b")
 ld_panel(axes3[0,1], con["CASTILLO"], "Castillo — Contested\n(COMPUTADA RESUELTA)", "#e67e00")
 ld_panel(axes3[1,0], unc["FUJIMORI"], "Fujimori — Uncontested\n(CONTABILIZADA)", "#2980b9")
@@ -717,11 +713,11 @@ ax4.set_xlabel("Castillo 1st-round share (of all 18-candidate valid votes)", fon
 ax4.set_ylabel("Castillo 2nd-round share (of Castillo + Fujimori)", fontsize=9.5)
 ax4.xaxis.set_major_formatter(mtick.PercentFormatter(1.0))
 ax4.yaxis.set_major_formatter(mtick.PercentFormatter(1.0))
-ax4.set_title("Fig. 4 — Primera vs Segunda Vuelta (District Level)\n"
-              "Circle ∝ registered voters. Top-10 residual outliers labeled.",
-              fontsize=10, fontweight="bold")
+# title removed — caption in LaTeX
 handles4, labels4 = ax4.get_legend_handles_labels()
-ax4.legend(handles4, labels4, fontsize=8.5, loc="upper left", framealpha=0.85)
+ax4.legend(handles4, labels4, fontsize=8.5,
+           loc="upper center", bbox_to_anchor=(0.5, -0.12),
+           ncol=2, framealpha=0.9)
 save_fig(fig4, "fig4_primera_vs_segunda")
 plt.close()
 
@@ -747,15 +743,13 @@ for val, col, ls in [(t1v.mean(),"#4575b4","--"),(t2v.mean(),"#d73027","--"),
 ax5.set_xlabel("Turnout (votes cast / registered voters)", fontsize=10)
 ax5.set_ylabel("Density", fontsize=10)
 ax5.xaxis.set_major_formatter(mtick.PercentFormatter(1.0))
-ax5.set_title("Fig. 5 — Mesa-Level Turnout Distribution\n"
-              "Primera Vuelta (Apr 11) vs Segunda Vuelta (Jun 6), 2021",
-              fontsize=11, fontweight="bold")
+# title removed — caption in LaTeX
 ax5.legend(handles=[
     mpatches.Patch(facecolor="#4575b4", alpha=0.6, label=f"Primera vuelta (n={len(t1v):,})"),
     mpatches.Patch(facecolor="#d73027", alpha=0.6, label=f"Segunda vuelta (n={len(t2v):,})"),
     Line2D([0],[0], color="gray", lw=1.2, ls="--", label="Mean"),
     Line2D([0],[0], color="gray", lw=1.2, ls=":", label="Median"),
-], fontsize=9, loc="upper left")
+], fontsize=9, loc="upper center", bbox_to_anchor=(0.5, -0.12), ncol=2, framealpha=0.9)
 ax5.set_xlim(0.05, 1.0)
 save_fig(fig5, "fig5_turnout_dist")
 plt.close()
@@ -781,12 +775,10 @@ ax6.set_xlabel("Castillo vote share of valid votes (%)", fontsize=10)
 ax6.set_xlim(10, 105)
 ax6.set_xticks([20,30,40,50,60,70,80,90])
 ax6.xaxis.set_major_formatter(mtick.FormatStrFormatter("%d%%"))
-ax6.set_title("Fig. 6 — Castillo vs Fujimori by Department\n"
-              f"Peru Presidential Runoff, June 2021 (n={len(df):,} domestic final-status mesas)",
-              fontsize=10, fontweight="bold")
+# title removed — caption in LaTeX
 ax6.legend(handles=[mpatches.Patch(color="#c0392b",label="Castillo majority"),
                     mpatches.Patch(color="#2980b9",label="Fujimori majority")],
-           fontsize=9, loc="lower right")
+           fontsize=9, loc="upper center", bbox_to_anchor=(0.5, -0.04), ncol=2, framealpha=0.9)
 ax6.text(101.5, len(dept6)-0.5, "Valid\nvotes", ha="left", va="top", fontsize=8, color="#444")
 ax6.spines["right"].set_visible(False); ax6.spines["top"].set_visible(False)
 plt.tight_layout()
@@ -809,8 +801,7 @@ cb7.set_label("Null vote rate (% of votes cast)", fontsize=9)
 cb7.set_ticks([0, 0.05, 0.10, 0.15])
 cb7.set_ticklabels(["0%","5%","10%","≥15%"])
 cb7.ax.tick_params(labelsize=8)
-ax7.set_title("Fig. 7 — Null Vote Rate by Province\nPeru Presidential Runoff, June 2021",
-              fontsize=11, fontweight="bold", pad=10)
+# title removed — caption in LaTeX
 save_fig(fig7, "fig7_map_nullvotes")
 plt.close()
 
@@ -830,9 +821,7 @@ cb8.set_label("Share of contested mesas (COMPUTADA RESUELTA)", fontsize=9)
 cb8.set_ticks([0, 0.02, 0.05, 0.10])
 cb8.set_ticklabels(["0%","2%","5%","≥10%"])
 cb8.ax.tick_params(labelsize=8)
-ax8.set_title("Fig. 8 — Share of Contested (COMPUTADA RESUELTA) Mesas by Province\n"
-              "Peru Presidential Runoff, June 2021",
-              fontsize=10, fontweight="bold", pad=8)
+# title removed — caption in LaTeX
 ax8.annotate("Darker = higher share of actas that were impugned and reviewed by JNE.",
              xy=(0.01,0.01), xycoords="axes fraction", fontsize=7, color="#555", va="bottom")
 save_fig(fig8, "fig8_map_contested")
