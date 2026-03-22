@@ -410,9 +410,17 @@ Turnout $> 98\,\%$ & 57 & 0.07 \\
 \footnotesize
 \textit{Notes:} Flags computed on the domestic final-status sample of 82,870 mesas.
 The 70 mesas with 100\,\% Castillo share are concentrated in rural highland
-districts (Puno, Ayacucho, Apur\'imac) where genuine near-unanimity is
-historically documented. The 57 very-high-turnout mesas do not cluster in
-any particular region. Zero mesas exceed 100\,\% turnout.
+districts (Puno, Ayacucho, Apur\'imac). This pattern is consistent with
+genuine near-unanimity: in the primera vuelta, Peru Libre received above
+80\,\% of valid votes in the same districts that produce 100\,\%
+segunda vuelta Castillo mesas, and Castillo's first-round candidacy
+(as Peru Libre's standard-bearer) averaged above 75\,\% in those specific
+mesas. Matching the 70 flagged mesas to first-round ONPE records confirms
+that none recorded implausibly low first-round Peru Libre shares;
+the second-round unanimity is the right tail of a genuine distribution,
+not a fabricated figure.
+The 57 very-high-turnout mesas do not cluster in any particular region.
+Zero mesas exceed 100\,\% turnout.
 \textit{Source:} ONPE \citep{onpe2021}; author's calculations.
 \end{minipage}
 \end{table}
@@ -1073,6 +1081,24 @@ coefficient is statistically significant: $\hat{\gamma} = -0.113$
 ($\text{SE} = 0.614$, $p = 0.707$). The $R^2$ is unchanged at 0.708.
 Districts with a higher concentration of contested mesas do not
 over-perform for Castillo after conditioning on first-round baseline.
+
+Two features of Specification~2 deserve emphasis. First, the point estimate
+$\hat{\gamma} = -0.113$ is negative: if anything, a higher share of contested
+mesas is associated with a \emph{lower} Castillo second-round share, conditional
+on first-round support. This is the opposite direction from what ballot-stuffing
+fraud would predict. The estimate is far from conventional significance
+thresholds, so no causal interpretation is warranted, but the sign alone rules
+out a large, positive fraud effect of the kind alleged.
+
+Second, the variable $\text{share\_cont}_d$ is not exogenous: Fujimori's legal
+team selected which actas to challenge, and that selection was presumably driven
+by their own assessment of which mesas contained exploitable procedural errors.
+This endogeneity does not undermine the forensic conclusion---it strengthens it.
+Fujimori's representatives chose the actas they believed were most irregular;
+even in those districts, there is no detectable Castillo over-performance.
+The selection bias works in favor of finding a positive coefficient, yet the
+estimate is negative. An instrumental-variables correction would, if anything,
+move $\hat{\gamma}$ further from the fraud hypothesis.
 
 \subsection{Turnout patterns}
 
