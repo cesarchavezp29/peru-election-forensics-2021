@@ -6,31 +6,55 @@
 \usepackage{lmodern}
 \hypersetup{colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue}
 
+\usepackage{setspace}
+
 \begin{document}
 \begin{titlepage}
 \centering
-\vspace*{3.5cm}
+\vspace*{2cm}
 {\LARGE\bfseries Election Forensics in a Polarized Democracy:\\[10pt]
 Evidence from Peru's 2021 Presidential Runoff\par}
-\vspace{2.5cm}
-{\large Carlos C\'esar Ch\'avez Padilla\par}
-\vspace{0.8cm}
-{\normalsize
-  Center for the Economics of Human Development\\
-  University of Chicago\\[6pt]
-  \href{mailto:cchavezp@uchicago.edu}{cchavezp@uchicago.edu}
-\par}
-\vspace{1.5cm}
-{\normalsize September 2024\par}
-\vfill
-{\small\itshape
+\vspace{1.8cm}
+{\large Carlos C\'esar Ch\'avez Padilla\thanks{%
+  Center for the Economics of Human Development, University of Chicago.
+  Email: \href{mailto:cchavezp@uchicago.edu}{cchavezp@uchicago.edu}.
   \textit{Acknowledgments:}
   I thank the Oficina Nacional de Procesos Electorales for making
-  mesa-level data publicly available. All errors are my own.\\[4pt]
+  mesa-level data publicly available. All errors are my own.
   \textit{Data availability:} The primary data are publicly available
-  at \url{https://datosabiertos.gob.pe}.
-  Replication code is available at
-  \url{https://github.com/cesarchavezp29/peru-election-forensics-2021}.
-\par}
+  at \url{https://datosabiertos.gob.pe}. Replication code is available
+  at \url{https://github.com/cesarchavezp29/peru-election-forensics-2021}.}\par}
+\vspace{0.5cm}
+{\normalsize September 2024\par}
+\vspace{1.2cm}
+
+\begin{minipage}{0.88\textwidth}
+\small
+\begin{center}\textbf{Abstract}\end{center}
+\noindent
+Peru's 2021 presidential runoff between Pedro Castillo and Keiko Fujimori
+produced the closest result in modern Peruvian history---a margin of 44,263
+votes out of 17 million cast. Fujimori refused to concede, alleged systematic
+fraud, and delayed certification by six weeks. I apply multiple forensic
+methods to the complete universe of polling-station records published by
+Peru's electoral authority (ONPE): distributional fingerprint analysis,
+last-digit uniformity tests, and ecological regression comparing first- and
+second-round results. I also exploit the institutional distinction between
+\emph{contested} actas---those resolved by the electoral tribunal after
+challenge---and uncontested actas as a within-election test. No method
+detects patterns consistent with vote manipulation. Contested and uncontested
+polling stations show identical forensic signatures once geographic location
+is taken into account. The data instead reveal extreme geographic polarization:
+Castillo received over 80\,\% of valid votes in southern highland departments
+while Fujimori dominated coastal and metropolitan areas.
+
+\medskip
+\noindent\textbf{Keywords:} election forensics, electoral fraud, Peru,
+geographic polarization, distributional fingerprints, digit tests.
+
+\medskip
+\noindent\textbf{JEL codes:} D72, C12, P16.
+\end{minipage}
+
 \end{titlepage}
 \end{document}
