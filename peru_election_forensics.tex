@@ -31,11 +31,12 @@
           University of Chicago.
           Email: \href{mailto:cchavezp@uchicago.edu}{cchavezp@uchicago.edu}.
           I thank the Oficina Nacional de Procesos Electorales for making
-          mesa-level data publicly available.
-          All analysis was conducted in Python; replication code and data
-          are available from the author on request.}}
+          mesa-level data publicly available. All errors are my own.
+          \textit{Data availability:} The primary data are publicly available
+          at \url{https://datosabiertos.gob.pe}. Replication code is available
+          at \url{https://github.com/cesarchavezp29/peru-election-forensics-2021}.}}
 
-\date{September 2022}
+\date{March 2023}
 
 % ─── convenience macros ───────────────────────────────────────────────────────
 \newcommand{\pct}[1]{#1\,\%}
@@ -66,7 +67,7 @@ a within-election test. No method detects patterns consistent with vote
 manipulation. Contested and uncontested polling stations show identical
 forensic signatures once geographic location is taken into account. The data
 instead reveal extreme geographic polarization: Castillo received over 80\,\%
-of valid votes in southern highland provinces while Fujimori dominated coastal
+of valid votes in southern highland departments while Fujimori dominated coastal
 and metropolitan areas. These findings contribute to the election forensics
 literature and illustrate how geographic polarization can generate vote
 distributions that appear anomalous to non-specialists, fueling fraud
@@ -140,11 +141,11 @@ it to African elections. \citet{myagkov2009} study Russian and Ukrainian
 elections using a range of ecological methods. \citet{kobak2016} document
 integer-percentage clustering in Russian results. The Latin American context
 has received less attention, though the 2019 Bolivian election generated a
-substantial methodological debate: \citet{escobari2024} argue that the OAS
-claimed fraud on the basis of faulty statistical reasoning, while
-\citet{idrobo2022} show that late-counted rural votes mechanically shifted
-results toward Evo Morales, consistent with normal differential reporting
-speeds rather than manipulation. Peru 2021 differs from Bolivia 2019 in a
+substantial methodological debate: \citet{idrobo2022} show that the shift
+toward Morales in the late count was consistent with normal differential
+reporting speeds and did not require fraud as an explanation, while
+\citet{escobari2024} argue that the discontinuity in vote transmission was
+real and indicative of manipulation. Peru 2021 differs from Bolivia 2019 in a
 structural way---there was no halt or disruption in the ONPE counting
 process---but both cases illustrate how geographic polarization and
 differential reporting speeds can make legitimate elections appear suspicious.
@@ -160,12 +161,10 @@ by Fujimori's legal team.
 Close elections generating fraud allegations that undermine democratic
 legitimacy have become a recurring pattern. \citet{eggers2021} provide a
 comprehensive forensic examination of claims about the 2020 U.S. election and
-find no evidence supporting them. Similar dynamics unfolded in Kenya's 2017
-election and, to varying degrees, in multiple Latin American contests over the
-last decade \citep{lehoucq2003, hyde2007}. In each case, the gap between
-forensic evidence and public perception is large. Statistical analysis alone
-cannot close that gap, but it provides the evidentiary baseline against which
-other claims must be weighed.
+find no evidence supporting them. Similar dynamics have unfolded in multiple
+elections across Latin America and beyond \citep{lehoucq2003, hyde2007}.
+Statistical analysis provides the evidentiary baseline against which other
+claims must be weighed.
 
 The data and methods are described in Sections~\ref{sec:data} and
 \ref{sec:methods}. Results follow in Section~\ref{sec:results}, with a
@@ -187,7 +186,7 @@ who might have been expected to coalesce voters against both Castillo and
 Fujimori---Hernando de Soto, Yonhy Lescano, Rafael L\'opez Aliaga---each
 obtained between 8\,\% and 12\,\%, preventing any single moderate from
 advancing to the runoff. The outcome was shaped by Peru's fragmented party
-system, which \citet{fujiwara2015} and others have documented as one of the
+system, which \citet{mainwaring2018} and others have documented as one of the
 most weakly institutionalized in Latin America.
 
 \subsection{Runoff dynamics}
@@ -308,11 +307,6 @@ department and province name pairs; 193 of 195 GADM provinces match, with the tw
 remaining unmatched being a structural GADM artifact (Lima province listed under
 a separate administrative level) and a water-body polygon (Lago Titicaca) with
 no assigned voters.
-
-The sum of all 86,488 rows in the ONPE file gives a Castillo--Fujimori margin
-of 44,240 votes, within 23 votes of the official JNE-certified margin of
-44,263. The trivial discrepancy comes from rounding in the small number of
-dropped rows (ANULADA and EN PROCESO). The data are internally consistent.
 
 \medskip
 \noindent [Table~\ref{tab:summary} about here]
@@ -684,7 +678,7 @@ High null rates concentrate in coastal and metropolitan areas: Lima
 null vote rates. These are Fujimori's strongest departments. If fraud
 had taken the form of systematic invalidation of pro-Castillo votes,
 null rates would be elevated in Castillo's highland strongholds. The
-observed pattern points instead to protest voting by urban Lim\~enhos
+observed pattern points instead to protest voting by urban Lime\~nos
 who disliked both candidates---a plausible behavioral response given
 the polarizing choice on offer.
 
@@ -727,7 +721,7 @@ time of the election. A Castillo presidency increased the probability that
 she would be convicted and imprisoned (as ultimately occurred in 2023).
 This gave her a rational personal incentive to contest the result beyond
 what the evidence warranted, independent of any genuine belief that fraud
-had occurred \citep{chumacero2025}.
+had occurred.
 
 \subsection{Comparison with Bolivia 2019}
 
@@ -804,8 +798,8 @@ challenged acta individually and certified the result. Yet a substantial
 fraction of the electorate believed the election was stolen.
 This pattern---unfounded fraud allegations undermining democratic legitimacy
 in close, polarized elections---has recurred across different institutional
-contexts: the United States in 2020 \citep{eggers2021}, Bolivia in 2019,
-Kenya in 2017 \citep{gallego2023}. Rapid communication of forensic evidence
+contexts: the United States in 2020 \citep{eggers2021}, Bolivia in 2019
+\citep{idrobo2022, escobari2024}, and Kenya in 2017. Rapid communication of forensic evidence
 by credible institutions, produced quickly enough to compete with the fraud
 narrative as it forms, is an institutional response worth developing.
 
@@ -998,6 +992,9 @@ Sierra & 111 & 18,546 & 0.60\,\% \\
 Average shares are unweighted means across polling stations.
 Costa includes Lima, La Libertad, Lambayeque, Piura, Ica,
 Arequipa, Moquegua, Tacna, Tumbes, \'Ancash, and Lima Provincias.
+\'Ancash spans both coastal and highland provinces; I assign it to Costa
+following INEI's conventional macro-regional classification.
+Reassigning \'Ancash to Sierra does not change any result.
 Sierra is the remaining highland departments; Selva the Amazonian departments.
 Challenged actas are concentrated in Fujimori's stronghold (Costa, and Lima
 in particular) rather than in Castillo's highland support base.
