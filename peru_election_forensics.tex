@@ -1100,6 +1100,19 @@ The selection bias works in favor of finding a positive coefficient, yet the
 estimate is negative. An instrumental-variables correction would, if anything,
 move $\hat{\gamma}$ further from the fraud hypothesis.
 
+Appendix~\ref{app:swing} extends this analysis to the mesa level.
+Matching each polling station across both rounds yields a panel of
+$79{,}672$ mesas, of which 1,004 are contested.
+The mean swing from Peru Libre's first-round share to Castillo's
+second-round share is $+31.3$~pp---exactly what binary consolidation
+of anti-Fujimori votes predicts mechanically.
+Contested mesas exhibit a mean swing of $+29.3$~pp, \emph{lower} than
+the $+31.3$~pp uncontested average (Welch $t = -6.0$,
+$p = 2.6 \times 10^{-9}$).
+The mesa-level OLS residual is $-0.020$ for contested mesas,
+confirming that the fraud hypothesis---which requires a positive residual
+in precisely those mesas---is directly rejected.
+
 \subsection{Turnout patterns}
 
 Figure~\ref{fig:turnout} shows the turnout distributions for both rounds.
@@ -1215,6 +1228,18 @@ near-universal turnout look like fraud to someone who has never visited
 these regions and does not know their voting history. In Andean communities
 with strong collective identities and long histories of political mobilization,
 near-unanimous results are not unusual and do not require manipulation.
+
+The mesa-level swing analysis in Appendix~\ref{app:swing} bears directly
+on this perception.
+Of the 116 mesas recording a swing of $\geq 80$ percentage points
+between rounds, only 2 are contested.
+Lima and Amazonas account for 88\,\% of extreme-swing mesas---not the
+southern highland departments of Puno, Ayacucho, or Cusco that anchored
+the fraud allegations.
+These extreme swings reflect high anti-Fujimori consolidation from former
+Sagasti and Toledo voters who had near-zero Peru Libre support in the first
+round, not manipulation: the mesas with the most striking two-round swings
+were almost entirely unchallenged by Fujimori's own legal team.
 
 Third, and most consequential for the fraud narrative, the running count
 shifted toward Castillo over several days as highland actas arrived later
@@ -1356,5 +1381,11 @@ fraud allegations before they take hold.
 \newpage
 \bibliographystyle{apalike}
 \bibliography{references}
+
+% =============================================================================
+%  APPENDIX
+% =============================================================================
+\newpage
+\input{appendix_a_swing_analysis}
 
 \end{document}
