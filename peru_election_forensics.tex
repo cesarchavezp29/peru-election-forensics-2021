@@ -309,11 +309,17 @@ remaining unmatched being a structural GADM artifact (Lima province listed under
 a separate administrative level) and a water-body polygon (Lago Titicaca) with
 no assigned voters.
 
+The domestic margin of $+152{,}266$ reflects Castillo's dominant performance
+in the sierra and selva regions. The overseas margin of $-107{,}917$ reflects
+the Lima-centric composition of the Peruvian diaspora, which voted heavily
+for Fujimori at a turnout rate less than half the domestic average.
+Together they reconcile to the official certified margin of 44,263.
+
 \begin{table}[H]
+\centering
 \caption{National Summary Statistics, Peru 2021 Presidential Runoff}
 \label{tab:summary}
-\medskip
-\small
+\resizebox{\textwidth}{!}{%
 \begin{tabular}{lrr}
 \toprule
  & \textbf{Domestic} & \textbf{Overseas} \\
@@ -338,31 +344,33 @@ Null votes & 1,043,651 & 19,073 \\
 Blank votes & 119,464 & 1,998 \\
 \quad Share of votes cast & 0.65\,\% & 0.56\,\% \\
 \bottomrule
-\end{tabular}
-\medskip
-
-\small\textit{Notes:}
-The domestic sample comprises all polling stations with final status
-CONTABILIZADA or COMPUTADA RESUELTA, excluding overseas jurisdictions
+\end{tabular}%
+}
+\vspace{0.2cm}
+\begin{minipage}{\textwidth}
+\footnotesize
+\textit{Notes:} The domestic sample comprises all polling stations with final
+status CONTABILIZADA or COMPUTADA RESUELTA, excluding overseas jurisdictions
 (Am\'erica, Europa, Asia, Ocean\'ia, \'Africa).
-The all-rows Castillo$-$Fujimori margin is 44,240, within 23 votes
-of the official JNE-certified margin of 44,263; the trivial discrepancy
-arises from rounding in dropped rows (ANULADA and EN PROCESO).
+The all-rows Castillo$-$Fujimori margin is 44,240, within 23 votes of the
+official JNE-certified margin of 44,263; the trivial discrepancy arises from
+rounding in dropped rows (ANULADA and EN PROCESO).
 \textit{Source:} ONPE, Resultados por mesa de las Elecciones Presidenciales
 2021 Segunda Vuelta \citep{onpe2021}.
+\end{minipage}
 \end{table}
 
-The domestic margin of $+152{,}266$ reflects Castillo's dominant performance
-in the sierra and selva regions. The overseas margin of $-107{,}917$ reflects
-the Lima-centric composition of the Peruvian diaspora, which voted heavily
-for Fujimori at a turnout rate less than half the domestic average.
-Together they reconcile to the official certified margin of 44,263.
+The anomaly flag counts reveal no systematic indicators of fraud. The 319 mesas
+with high null rates deserve further inspection: as Figure~\ref{fig:map_nullvotes}
+shows, they are concentrated in coastal departments rather than in Castillo's
+highland strongholds, consistent with protest voting rather than targeted
+invalidation of pro-Castillo ballots.
 
 \begin{table}[H]
+\centering
 \caption{Anomaly Flags: Distributional Extremes in the Domestic Final-Status Sample}
 \label{tab:flags}
-\medskip
-\small
+\resizebox{\textwidth}{!}{%
 \begin{tabular}{lrr}
 \toprule
 Anomaly criterion & Mesas flagged & \% of sample \\
@@ -374,23 +382,19 @@ Castillo share $= 100\,\%$ (and valid votes $\geq 10$) & 70 & 0.08 \\
 Fujimori share $= 100\,\%$ (and valid votes $\geq 10$) & 3 & 0.00 \\
 Turnout $> 98\,\%$ & 57 & 0.07 \\
 \bottomrule
-\end{tabular}
-\medskip
-
-\small\textit{Notes:}
-Flags computed on the domestic final-status sample of 82,870 mesas.
+\end{tabular}%
+}
+\vspace{0.2cm}
+\begin{minipage}{\textwidth}
+\footnotesize
+\textit{Notes:} Flags computed on the domestic final-status sample of 82,870 mesas.
 The 70 mesas with 100\,\% Castillo share are concentrated in rural highland
 districts (Puno, Ayacucho, Apur\'imac) where genuine near-unanimity is
 historically documented. The 57 very-high-turnout mesas do not cluster in
 any particular region. Zero mesas exceed 100\,\% turnout.
 \textit{Source:} ONPE \citep{onpe2021}; author's calculations.
+\end{minipage}
 \end{table}
-
-The anomaly flag counts reveal no systematic indicators of fraud. The 319 mesas
-with high null rates deserve further inspection: as Figure~\ref{fig:map_nullvotes}
-shows, they are concentrated in coastal departments rather than in Castillo's
-highland strongholds, consistent with protest voting rather than targeted
-invalidation of pro-Castillo ballots.
 
 % =============================================================================
 \section{Methods}
@@ -599,14 +603,23 @@ explained by genuine political preferences than by manipulation.
 The paper's distinctive test exploits the institutional record of the JNE
 challenge process. Table~\ref{tab:contested} reports the comparison.
 
+Of 82,870 domestic final-status polling stations, 1,077 (1.30\,\%) are
+\emph{computada resuelta}---contested and resolved. These mesas break
+42.1\,\% Castillo / 57.9\,\% Fujimori, compared with 51.4\,\% / 48.6\,\% in
+the 81,793 uncontested stations. The contested mesas net out to a Fujimori
+advantage of 39,250 votes; the uncontested mesas net a Castillo advantage of
+191,516. The domestic net is $+152{,}266$ for Castillo; combined with the
+$-107{,}917$ overseas margin (where Fujimori dominated 66.2\,\% to 33.8\,\%),
+the all-rows margin is 44,240---within 23 votes of the official 44,263.
+
 \begin{table}[H]
+\centering
 \caption{Contested vs.\ Uncontested Polling Stations}
 \label{tab:contested}
-\medskip
-\small
-Panel A: Vote totals and shares
+\noindent\textbf{Panel A:} Vote totals and shares
 \medskip
 
+\resizebox{\textwidth}{!}{%
 \begin{tabular}{lrrr}
 \toprule
  & Uncontested & Contested & Total \\
@@ -622,12 +635,14 @@ Avg.\ Castillo share & 51.42\,\% & 42.11\,\% & 51.30\,\% \\
 Avg.\ Fujimori share & 48.58\,\% & 57.89\,\% & 48.70\,\% \\
 Avg.\ null rate & 5.62\,\% & 7.08\,\% & 5.64\,\% \\
 \bottomrule
-\end{tabular}
+\end{tabular}%
+}
 
 \medskip
-Panel B: Geographic distribution of contested mesas
+\noindent\textbf{Panel B:} Geographic distribution of contested mesas
 \medskip
 
+\resizebox{\textwidth}{!}{%
 \begin{tabular}{lrrr}
 \toprule
 Macro-region & Contested mesas & Total mesas & Contestation rate \\
@@ -638,11 +653,12 @@ Sierra & 111 & 18,546 & 0.60\,\% \\
 \midrule
 \textbf{Total} & \textbf{1,077} & \textbf{82,870} & \textbf{1.30\,\%} \\
 \bottomrule
-\end{tabular}
-\medskip
-
-\small\textit{Notes:}
-Average shares are unweighted means across polling stations.
+\end{tabular}%
+}
+\vspace{0.2cm}
+\begin{minipage}{\textwidth}
+\footnotesize
+\textit{Notes:} Average shares are unweighted means across polling stations.
 Costa includes Lima, La Libertad, Lambayeque, Piura, Ica,
 Arequipa, Moquegua, Tacna, Tumbes, \'Ancash, and Lima Provincias.
 \'Ancash spans both coastal and highland provinces; I assign it to Costa
@@ -652,16 +668,8 @@ Sierra is the remaining highland departments; Selva the Amazonian departments.
 Challenged actas are concentrated in Fujimori's stronghold (Costa, and Lima
 in particular) rather than in Castillo's highland support base.
 \textit{Source:} ONPE \citep{onpe2021}; JNE \citep{jne2021}; author's calculations.
+\end{minipage}
 \end{table}
-
-Of 82,870 domestic final-status polling stations, 1,077 (1.30\,\%) are
-\emph{computada resuelta}---contested and resolved. These mesas break
-42.1\,\% Castillo / 57.9\,\% Fujimori, compared with 51.4\,\% / 48.6\,\% in
-the 81,793 uncontested stations. The contested mesas net out to a Fujimori
-advantage of 39,250 votes; the uncontested mesas net a Castillo advantage of
-191,516. The domestic net is $+152{,}266$ for Castillo; combined with the
-$-107{,}917$ overseas margin (where Fujimori dominated 66.2\,\% to 33.8\,\%),
-the all-rows margin is 44,240---within 23 votes of the official 44,263.
 
 The geographic distribution of contested mesas, shown in
 Figure~\ref{fig:map_contested}, runs directly against the fraud hypothesis.
@@ -671,11 +679,17 @@ across all Costa departments---compared with 1.25\,\% in the Selva and
 0.60\,\% in the Sierra. Challenges were concentrated in Fujimori's own
 territory, not in Castillo's highland strongholds.
 
+Table~\ref{tab:geo_contested} confirms that the challenge process was
+geographically concentrated in areas favorable to Fujimori. Puno, Castillo's
+strongest department at 89.3\,\%, has a contestation rate of only 0.47\,\%.
+Lima, his weakest department at 35.4\,\%, has a contestation rate of 1.99\,\%.
+This pattern is inconsistent with a strategy of challenging Castillo-favoring actas.
+
 \begin{table}[H]
+\centering
 \caption{Geographic Distribution of Contested Mesas by Department}
 \label{tab:geo_contested}
-\medskip
-\small
+\resizebox{\textwidth}{!}{%
 \begin{tabular}{lrrrr}
 \toprule
 Department & Contested & Uncontested & Total & \% Contested \\
@@ -712,13 +726,14 @@ CUSCO          & 13  & 3,511 & 3,524 & 0.37 \\
 \midrule
 \textbf{Total} & \textbf{1,077} & \textbf{81,793} & \textbf{82,870} & \textbf{1.30} \\
 \bottomrule
-\end{tabular}
-\medskip
-
-\small\textit{Notes:}
-Sorted by contestation rate descending. Macro-region assignments:
-Costa = Lima, Callao, Piura, La Libertad, Lambayeque, Ica, Arequipa,
-Moquegua, Tacna, Tumbes, \'Ancash, Lima Provincias;
+\end{tabular}%
+}
+\vspace{0.2cm}
+\begin{minipage}{\textwidth}
+\footnotesize
+\textit{Notes:} Sorted by contestation rate descending. Macro-region
+assignments: Costa = Lima, Callao, Piura, La Libertad, Lambayeque, Ica,
+Arequipa, Moquegua, Tacna, Tumbes, \'Ancash, Lima Provincias;
 Selva = Loreto, Ucayali, Madre de Dios, Amazonas, San Mart\'in, Hu\'anuco;
 Sierra = remaining departments.
 Lima alone accounts for 555 of 1,077 domestic contested mesas (51.5\,\%).
@@ -726,13 +741,8 @@ The departments with the highest contestation rates (Ucayali, Lima, Loreto,
 Callao, Piura) are not Castillo's strongholds.
 \textit{Source:} ONPE \citep{onpe2021}; JNE \citep{jne2021};
 author's calculations.
+\end{minipage}
 \end{table}
-
-Table~\ref{tab:geo_contested} confirms that the challenge process was
-geographically concentrated in areas favorable to Fujimori. Puno, Castillo's
-strongest department at 89.3\,\%, has a contestation rate of only 0.47\,\%.
-Lima, his weakest department at 35.4\,\%, has a contestation rate of 1.99\,\%.
-This pattern is inconsistent with a strategy of challenging Castillo-favoring actas.
 
 \begin{figure}[H]
 \centering
@@ -805,11 +815,21 @@ Table~\ref{tab:digits} reports the chi-squared tests for all four groups.
 All four fail to reject the null hypothesis of uniformity at any conventional
 significance level.
 
+For Castillo votes at uncontested mesas ($n = 81{,}793$), the test statistic
+is $\chi^2 = 12.44$ ($p = 0.190$). For Fujimori votes at uncontested mesas
+($n = 81{,}724$, after dropping 69 mesas with zero Fujimori votes), $\chi^2 =
+7.84$ ($p = 0.551$). The contested subsamples are smaller ($n \approx
+1{,}070$ each) and therefore have less statistical power, but both also pass
+cleanly: $\chi^2 = 4.05$ ($p = 0.908$) for Castillo and $\chi^2 = 4.66$
+($p = 0.863$) for Fujimori. The 0+5 digit share---the primary heaping
+indicator---ranges from 18.6\,\% to 20.5\,\% across the four groups, all
+within half a percentage point of the expected 20\,\%.
+
 \begin{table}[H]
+\centering
 \caption{Last-Digit Uniformity Tests}
 \label{tab:digits}
-\medskip
-\small
+\resizebox{\textwidth}{!}{%
 \begin{tabular}{lrrrr}
 \toprule
 Group & $n$ & $\chi^2$ (9 d.f.) & $p$-value & Share digits 0+5 \\
@@ -821,32 +841,24 @@ Fujimori, contested & 1,071 & 4.66 & 0.863 & 20.54\,\% \\
 \midrule
 Expected under H$_0$ & --- & --- & --- & 20.00\,\% \\
 \bottomrule
-\end{tabular}
-\medskip
-
-\small\textit{Notes:}
-The null hypothesis is that last digits are uniformly distributed over $\{0,
-1, \ldots, 9\}$. The test excludes observations with zero votes for the
-candidate (the last digit is undefined). Zero-exclusions: Castillo uncontested
-0, Castillo contested 8, Fujimori uncontested 69, Fujimori contested 6.
+\end{tabular}%
+}
+\vspace{0.2cm}
+\begin{minipage}{\textwidth}
+\footnotesize
+\textit{Notes:} The null hypothesis is that last digits are uniformly
+distributed over $\{0, 1, \ldots, 9\}$. The test excludes observations with
+zero votes for the candidate (the last digit is undefined).
+Zero-exclusions: Castillo uncontested 0, Castillo contested 8,
+Fujimori uncontested 69, Fujimori contested 6.
 None of the four tests rejects uniformity at the 10\,\% level.
 The contested subsamples ($n \approx 1{,}070$) have approximately 25\,\% power
 to detect heaping at the level observed in documented fraud cases
-\citep{beber2012}, so their clean results carry less weight than the
-large-sample uncontested results; the uncontested tests have power
-exceeding 99\,\% for any practically meaningful departure from uniformity.
+\citep{beber2012}; the uncontested tests have power exceeding 99\,\% for any
+practically meaningful departure from uniformity.
 \textit{Source:} ONPE \citep{onpe2021}; author's calculations.
+\end{minipage}
 \end{table}
-
-For Castillo votes at uncontested mesas ($n = 81{,}793$), the test statistic
-is $\chi^2 = 12.44$ ($p = 0.190$). For Fujimori votes at uncontested mesas
-($n = 81{,}724$, after dropping 69 mesas with zero Fujimori votes), $\chi^2 =
-7.84$ ($p = 0.551$). The contested subsamples are smaller ($n \approx
-1{,}070$ each) and therefore have less statistical power, but both also pass
-cleanly: $\chi^2 = 4.05$ ($p = 0.908$) for Castillo and $\chi^2 = 4.66$
-($p = 0.863$) for Fujimori. The 0+5 digit share---the primary heaping
-indicator---ranges from 18.6\,\% to 20.5\,\% across the four groups, all
-within half a percentage point of the expected 20\,\%.
 
 \begin{figure}[H]
 \centering
@@ -876,11 +888,15 @@ signature. No such pattern appears.
 
 Table~\ref{tab:regression} reports both specifications.
 
+Specification~1 regresses Castillo's second-round district share on Peru
+Libre's first-round district share across $N = 1{,}873$ districts with
+matched data. The estimated relationship is:
+
 \begin{table}[H]
+\centering
 \caption{Ecological Regression: First-Round and Second-Round Vote Shares at the District Level}
 \label{tab:regression}
-\medskip
-\small
+\resizebox{\textwidth}{!}{%
 \begin{tabular}{lcc}
 \toprule
  & Specification 1 & Specification 2 \\
@@ -898,13 +914,14 @@ Primera $\times$ contested & & 0.231 \\
 $N$ & 1,873 & 1,873 \\
 $R^2$ & 0.708 & 0.708 \\
 \bottomrule
-\end{tabular}
-\medskip
-
-\small\textit{Notes:}
-Dependent variable: Castillo valid-vote share in the segunda vuelta,
-aggregated to the district level. Primera share is Peru Libre's valid-vote
-share in the primera vuelta (candidate 16, VOTOS\_P16).
+\end{tabular}%
+}
+\vspace{0.2cm}
+\begin{minipage}{\textwidth}
+\footnotesize
+\textit{Notes:} Dependent variable: Castillo valid-vote share in the segunda
+vuelta, aggregated to the district level. Primera share is Peru Libre's
+valid-vote share in the primera vuelta (candidate 16, VOTOS\_P16).
 Share contested is the fraction of a district's final-status segunda vuelta
 mesas that are \emph{computada resuelta}. HC0-robust standard errors
 in parentheses. $^{***}$ $p < 0.001$.
@@ -912,11 +929,8 @@ Sample restricted to districts with at least 10 valid votes in the segunda
 vuelta and positive Peru Libre votes in the primera vuelta. Districts with
 at least one contested mesa: 314 (16.8\,\% of sample).
 \textit{Source:} ONPE \citep{onpe2021, onpe2021a}; author's calculations.
+\end{minipage}
 \end{table}
-
-Specification~1 regresses Castillo's second-round district share on Peru
-Libre's first-round district share across $N = 1{,}873$ districts with
-matched data. The estimated relationship is:
 \[
   \widehat{\text{share}}_{2v} = 0.392 + 0.817 \times \text{share}_{1v},
   \quad R^2 = 0.708.
