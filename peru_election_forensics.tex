@@ -24,18 +24,18 @@
 
 \doublespacing
 
-\title{Election Forensics in a Polarized Democracy:\\
-       Evidence from Peru's 2021 Presidential Runoff}
+\title{Fraud Allegations as Identification:\\
+       A Within-Election Forensic Test Using Institutional Challenge Records}
 
 \author{Carlos C\'esar Ch\'avez Padilla\thanks{%
-  Center for the Economics of Human Development, University of Chicago.
   Email: \href{mailto:cchavezp@uchicago.edu}{cchavezp@uchicago.edu}.
-  \textit{Acknowledgments:}
   I thank the Oficina Nacional de Procesos Electorales for making
   mesa-level data publicly available. All errors are my own.
   \textit{Data availability:} The primary data are publicly available
   at \url{https://datosabiertos.gob.pe}. Replication code is available
-  at \url{https://github.com/cesarchavezp29/peru-election-forensics-2021}.}}
+  at \url{https://github.com/cesarchavezp29/peru-election-forensics-2021}.}\\[4pt]
+  \normalsize Center for the Economics of Human Development\\
+  \normalsize University of Chicago}
 
 \date{September 2024}
 
@@ -54,25 +54,29 @@
 % ─── Abstract ────────────────────────────────────────────────────────────────
 \begin{abstract}
 \noindent
-Peru's 2021 presidential runoff between Pedro Castillo and Keiko Fujimori
-produced the closest result in modern Peruvian history---a margin of 44,263
-votes out of 17 million cast. Fujimori refused to concede, alleged systematic
-fraud, and delayed certification by six weeks. I apply multiple forensic
-methods to the complete universe of polling-station records published by
-Peru's electoral authority (ONPE): distributional fingerprint analysis
-\citep{klimek2012}, last-digit uniformity tests \citep{beber2012}, and
-ecological regression comparing first- and second-round results. I also
-exploit the institutional distinction between \emph{contested} actas---those
-resolved by the electoral tribunal after challenge---and uncontested actas as
-a within-election test. No method detects patterns consistent with vote
-manipulation. Contested and uncontested polling stations show identical
-forensic signatures once geographic location is taken into account. The data
-instead reveal extreme geographic polarization: Castillo received over 80\,\%
-of valid votes in southern highland departments while Fujimori dominated coastal
-and metropolitan areas. These findings contribute to the election forensics
-literature and illustrate how geographic polarization can generate vote
-distributions that appear anomalous to non-specialists, fueling fraud
-narratives even in clean elections.
+\begin{onehalfspacing}
+Standard election forensics methods---distributional fingerprint analysis,
+digit tests, ecological regression---apply cross-sectional diagnostics that
+cannot distinguish genuine geographic polarization from ballot manipulation
+when both produce similar distributional signatures. This paper introduces a
+within-election identification strategy that exploits institutional challenge
+records: when losing candidates file formal nullification challenges against
+specific polling stations, they inadvertently define a treatment group whose
+forensic properties can be compared to the unchallenged remainder of the same
+election. The design uses the fraud allegations themselves to construct the
+counterfactual, turning the challenger's own legal record into an
+identification instrument. I apply this strategy to Peru's 2021 presidential
+runoff---the narrowest result in modern Peruvian history, followed by six
+weeks of fraud allegations and delayed certification---using the complete
+universe of 82,870 polling-station records. No forensic method detects
+manipulation. Contested polling stations, far from over-performing for the
+alleged beneficiary, record a statistically significant two-percentage-point
+lower swing toward Castillo than comparable uncontested stations. The paper
+also documents how extreme geographic polarization generates distributional
+patterns observationally similar to ballot-stuffing signatures, with
+implications for the application of fingerprint methods in highly sorted
+electorates.
+\end{onehalfspacing}
 
 \medskip
 \noindent\textbf{Keywords:} election forensics, electoral fraud, Peru,
@@ -429,6 +433,32 @@ Zero mesas exceed 100\,\% turnout.
 \section{Methods}
 \label{sec:methods}
 % =============================================================================
+
+\subsection{The Institutional Challenge Design}
+\label{subsec:challenge-design}
+
+Elections in which the losing candidate files formal legal challenges against
+specific polling stations produce a natural within-election research design.
+The challenging party's legal team selects the actas they believe to be
+irregular, thereby defining a treatment group---contested polling
+stations---whose forensic properties can be directly compared to the
+unchallenged majority. This design has two advantages over purely
+cross-sectional forensic methods. First, it tests the specific factual claims
+made by the challengers rather than a generic null of no manipulation. If
+fraud occurred in the contested subset, that subset should exhibit anomalous
+forensic signatures relative to uncontested stations in the same election.
+Second, the selection of challenged actas by the losing party's own
+representatives creates an adversarially chosen treatment group: Fujimori's
+legal team had strong incentives to identify the polling stations most likely
+to contain irregularities, and rational selection implies they chose the
+actas where fraud, if present, was most detectable. The selection bias
+therefore works against finding a null result. If the contested subsample
+nevertheless shows no anomalous signature---and in fact under-performs the
+fraud hypothesis---the inference against manipulation is strengthened, not
+weakened, by the endogenous selection. This design is applicable to any
+election that generates an institutional challenge record and can be combined
+with the distributional and digit-based methods described in the following
+subsections.
 
 \subsection{Distributional fingerprint analysis}
 
